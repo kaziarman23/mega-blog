@@ -2,15 +2,15 @@ import Select from "./Select";
 import Header from "./Header/Header";
 import Footer from "./Footer/Footer";
 import Container from "./container/Container";
-import Logo from "./Logo";
+import Logo from "../components/Container/Logo";
 import LogoutBtn from "./Header/LogoutBtn";
 import RTE from "./RTE";
-import Signup from "./Signup";
+import Signup from "./Singup";
 import Login from "./Login";
 import Button from "./Button";
 import PostForm from "./post-form/PostForm";
 import PostCard from "./PostCard";
-import AuthLayout from "./AuthLayout";
+import AuthLayout from "./AuthLayout";  // have to fix the buged
 import Input from "./Input";
 
 
