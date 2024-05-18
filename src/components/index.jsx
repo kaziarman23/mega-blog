@@ -8,9 +8,9 @@ import RTE from "./RTE";
 import Signup from "./Singup";
 import Login from "./Login";
 import Button from "./Button";
-import PostForm from "./post-form/PostForm";
+import PostForm from "./PostForm/PostForm";
 import PostCard from "./PostCard";
-import AuthLayout from "./AuthLayout";  // have to fix the buged
+import AuthLayout from "./AuthLayout";  
 import Input from "./Input";
 
 
