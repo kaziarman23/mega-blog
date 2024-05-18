@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { Button, Input, Logo } from "./index/index";
-import { useFrom } from "react-hook-form";
+import { Button, Input, Logo } from "./index";
+import { useForm } from "react-hook-form";
 import { login } from "../store/authSlice";
 import authService from "../appwrite/auth";
 
@@ -10,7 +10,7 @@ function Singup() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const [error, setError] = useState("");
-    const [register, hendleSubmit] = useFrom();
+    const [register, hendleSubmit] = useForm();
 
     const create = async (data) => {
         setError("");

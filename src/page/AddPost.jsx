@@ -1,5 +1,5 @@
-import { Container } from "../components/Container"  // having problem in location
-import { PostForm } from "../components/PostForm/PostForm"
+import { Container } from "../components/index"  // having problem in location
+import  PostForm  from "../components/PostForm/PostForm"
 
 
 
