@@ -1,20 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App.jsx";
-import "./index.css";
 import { Provider } from "react-redux";
 import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import Home from "../src/page/Home.jsx";
-import AuthLayout from "./components/AuthLayout.jsx";
-import Login from "./components/Login.jsx";
-import Singup from "./components/Singup.jsx";
-import AllPosts from "./page/AllPosts.jsx"
-import AddPost from "./page/AddPost.jsx"
-import EditPost from "./page/EditPost.jsx"
-import Post from "./page/Post.jsx"
+import Home from "./page/Home.jsx";
+import { AuthLayout, Login } from "./components/index.js";
 
-
+import AddPost from "./page/AddPost";
+import Signup from "./page/Signup";
+import EditPost from "./page/EditPost";
+import Post from "./page/Post";
+import AllPosts from "./page/AllPosts";
 const router = createBrowserRouter([
     {
         path: "/",
@@ -36,7 +33,7 @@ const router = createBrowserRouter([
                 path: "/signup",
                 element: (
                     <AuthLayout authentication={false}>
-                        <Singup/>
+                        <Signup />
                     </AuthLayout>
                 ),
             },
@@ -78,7 +75,7 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById("root")).render(
     <React.StrictMode>
         <Provider store={store}>
-            <RouterProvider router={router}/>
+            <RouterProvider router={router} />
         </Provider>
     </React.StrictMode>
 );

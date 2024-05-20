@@ -1,13 +1,10 @@
-import { Container } from "../components/index"  // having problem in location
-import  PostForm  from "../components/PostForm/PostForm"
-
-
+import { Container, PostForm } from '../components'
 
 function AddPost() {
   return (
-    <div>
+    <div className='py-8'>
         <Container>
-            <PostForm></PostForm>
+            <PostForm />
         </Container>
     </div>
   )
