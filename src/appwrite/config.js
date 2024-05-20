@@ -4,20 +4,20 @@ import { Client, ID, Storage, Query, Databases } from "appwrite"
 
 export class Service{
     client = new Client()
-    Databases;
+    databases;
     bucket; 
 
     constructor(){
         this.client
         .setEndpoint(conf.appwriteURL)
         .setProject(conf.appwriteProjectId)
-        this.Databases = new Databases(this.client)
+        this.databases = new Databases(this.client)
         this.bucket = new Storage(this.client)
     }
 
     async createPost({title, slug, content, featureImage, status, userId}){
         try {
-            return await this.Databases.createDocument(
+            return await this.databases.createDocument(
                 conf.appwriteDataBaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -36,7 +36,7 @@ export class Service{
 
     async updatePost(slug,{title, content, featureImage, status}){
         try {
-            return await this.Databases.updateDocument(
+            return await this.databases.updateDocument(
                 conf.appwriteDataBaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -54,7 +54,7 @@ export class Service{
 
     async deletePost(slug){
         try {
-            await this.Databases.deleteDocument(
+            await this.databases.deleteDocument(
                 conf.appwriteDataBaseId,
                 conf.appwriteCollectionId,
                 slug,
@@ -62,18 +62,19 @@ export class Service{
             return true
         } catch (error) {
             console.log("appwrite serive :: deletePost :: error",error)
+            return false
         }
     }
 
 
     async getPost(slug){
         try {
-            await this.Databases.getDocument(
+            await this.databases.getDocument(
                 conf.appwriteDataBaseId,
                 conf.appwriteCollectionId,
                 slug
             )
-            return true
+            
         } catch (error) {
             console.log("appwrite serive :: getPost :: error",error)
             return false
@@ -82,7 +83,7 @@ export class Service{
 
     async getposts(queries = [Query.equal("status","active")]){
         try {
-            await this.Databases.listDocuments(
+        return await this.databases.listDocuments(
                 conf.appwriteDataBaseId,
                 conf.appwriteCollectionId,
                 queries
@@ -95,7 +96,7 @@ export class Service{
 
     async updateFile(file){
         try {
-            await this.bucket.createFile(
+        return await this.bucket.createFile(
                 conf.appwriteBucketId,
                 ID.unique(),
                 file,
