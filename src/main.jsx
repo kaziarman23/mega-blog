@@ -6,7 +6,6 @@ import store from "./store/store.js";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Home from "./page/Home.jsx";
 import { AuthLayout, Login } from "./components/index.js";
-
 import AddPost from "./page/AddPost";
 import Signup from "./page/Signup";
 import EditPost from "./page/EditPost";
